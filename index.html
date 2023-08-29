@@ -11,7 +11,8 @@
 
 <body>
     <header>Rock Paper Scissors</header>
-    <div><span id="status">Select Rock, Paper or Scissors</span> <button id="play_again_button">Restart</button></div>
+    <div><span id="status">Select Rock, Paper or Scissors</span> <button id="play_again_button"
+            onclick="restart()">Restart</button></div>
     <main>
         <div class="large_text" id="player_score">0</div>
         <div class="selection_container">
@@ -26,9 +27,9 @@
         <div class="selection_container">
             <h3>Computer</h3>
             <div class="selection">
-                <button>Rock</button>
-                <button>Paper</button>
-                <button>Scissors</button>
+                <button id="computer_rock">Rock</button>
+                <button id="computer_paper">Paper</button>
+                <button id="computer_scissors">Scissors</button>
             </div>
         </div>
         <div class="large_text" id="computer_score">0</div>

@@ -36,10 +36,20 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function play(_playerSelection) {
+    if (playerScore == 5 || computerScore == 5) {
+        return;
+    }
+    document.getElementById("play_again_button").innerText = "Restart";
     playerSelectionIds = ["player_rock", "player_paper", "player_scissors"];
     computerSelectionIds = ["computer_rock", "computer_paper", "computer_scissors"];
+    if (playerSelection != undefined) {
+        document.getElementById(playerSelectionIds[playerSelection]).classList.remove("selected");
+        document.getElementById(computerSelectionIds[computerSelection]).classList.remove("selected");
+    }
     playerSelection = _playerSelection;
     computerSelection = getComputerChoice();
+    document.getElementById(playerSelectionIds[playerSelection]).classList.add("selected");
+    document.getElementById(computerSelectionIds[computerSelection]).classList.add("selected");
 
     const result = playRound(playerSelection, computerSelection);
     console.log(result);
@@ -51,14 +61,12 @@ function play(_playerSelection) {
     setStatus(result);
 
     if (playerScore == 5 || computerScore == 5) {
-        setTimeout(() => {
-            if (playerScore == 5) {
-                setStatus("Player Win!");
-            } else if (computerScore == 5) {
-                setStatus("Computer Win!");
-            }
-            setScores(0, 0);
-        }, 2000);
+        if (playerScore == 5) {
+            setStatus("Player Win!");
+        } else if (computerScore == 5) {
+            setStatus("Computer Win!");
+        }
+        document.getElementById("play_again_button").innerText = "Play again";
     }
 }
 
@@ -73,4 +81,10 @@ function setStatus(_status) {
     document.getElementById("status").innerText = _status;
 }
 
-
+function restart() {
+    if (playerSelection != undefined) {
+        document.getElementById(playerSelectionIds[playerSelection]).classList.remove("selected");
+        document.getElementById(computerSelectionIds[computerSelection]).classList.remove("selected");
+    }
+    setScores(0, 0);
+}
