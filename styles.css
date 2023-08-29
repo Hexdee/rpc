@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    gap: 20px;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    /* gap: 20px; */
+}
+
+.selection_container {
+    text-align: center;
+}
+
+.selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.selection button {
+    width: 100px;
+    height: 100px;
+}
+
+.selection button.selected {
+    background-color: black;
+    color: #fff;
+}
+
+.result {
+    font-size: 24px;
+}
+
+.large_text {
+    font-size: 64px;
+}
+
+header {
+    padding: 16px;
+}
+
+footer {
+    margin-top: auto;
+}
+
+button {
+    cursor: pointer;
+}

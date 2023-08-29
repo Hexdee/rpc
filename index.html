@@ -4,12 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
     <script src="./script.js"></script>
 </head>
 
 <body>
-
+    <header>Rock Paper Scissors</header>
+    <div><span id="status">Select Rock, Paper or Scissors</span> <button id="play_again_button">Restart</button></div>
+    <main>
+        <div class="large_text" id="player_score">0</div>
+        <div class="selection_container">
+            <h3>Player</h3>
+            <div class="selection">
+                <button onclick="play(0)" id="player_rock">Rock</button>
+                <button onclick="play(1)" id="player_paper">Paper</button>
+                <button onclick="play(2)" id="player_scissors">Scissors</button>
+            </div>
+        </div>
+        <div class="large_text">VS</div>
+        <div class="selection_container">
+            <h3>Computer</h3>
+            <div class="selection">
+                <button>Rock</button>
+                <button>Paper</button>
+                <button>Scissors</button>
+            </div>
+        </div>
+        <div class="large_text" id="computer_score">0</div>
+    </main>
+    <footer>Hexdee &copy; 2023</footer>
 </body>
 
 </html>
